@@ -1,21 +1,79 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import "./Signup.css";
 
 function Signup() {
-   return (
+	// TODO:
+	// 1. Make a variable for each input field
+	// 2. Then assign a reference to a dom element
+	const nameFieldRef = useRef();
+	const usernameFieldRef = useRef();
+	const emailFieldRef = useRef();
+	const passwordFieldRef = useRef();
+	const confirmPasswordRef = useRef();
+
+	// TODO:
+	// 1. Add a function that handes register form
+	// 2. Make sure the form does not re-render
+	// 3  Print the value of form fields in browser
+	function handleRegisterForm(e) {
+		e.preventDefault();
+
+		const name = nameFieldRef.current.value;
+		const username = usernameFieldRef.current.value;
+		const email = emailFieldRef.current.value;
+		const password = passwordFieldRef.current.value;
+		const confirmPassword = confirmPasswordRef.current.value;
+
+		console.log({
+			name: name,
+			username: username,
+			email: email,
+			password: password,
+			confirm: confirmPassword,
+		});
+	}
+
+	return (
 		<section id="sign-up">
 			<div className="container">
 				<div className="left-content">
 					<div className="register-form">
-						<form>
+						{/* TODO: Using react browser events
+						 *
+						 * 1. Pass the event that send submit a form
+						 * 2. Pass the handler function as a reference */}
+						<form onSubmit={handleRegisterForm}>
 							<h2>Register an account</h2>
 							<div className="form-fields">
-								<input type="text" placeholder="Name" />
-								<input type="text" placeholder="Username" required />
-								<input type="email" placeholder="Email" required />
-								<input type="password" placeholder="Password" required />
-								<input type="password" placeholder="Confirm Password" required />
+								{/* TODO:
+								 *
+								 * Pass the reference values to each input field */}
+								<input type="text" placeholder="Name" ref={nameFieldRef} />
+								<input
+									type="text"
+									placeholder="Username"
+									required
+									ref={usernameFieldRef}
+								/>
+								<input
+									type="email"
+									placeholder="Email"
+									required
+									ref={emailFieldRef}
+								/>
+								<input
+									type="password"
+									placeholder="Password"
+									required
+									ref={passwordFieldRef}
+								/>
+								<input
+									type="password"
+									placeholder="Confirm Password"
+									required
+									ref={confirmPasswordRef}
+								/>
 							</div>
 							<div className="signup-btn">
 								<button type="submit">Sign Up</button>
