@@ -13,11 +13,11 @@
    justify-content: center;
    align-items: center;
    background-color: #fff;
-   border-radius: 10px;
-   -webkit-border-radius: 10px;
-   -moz-border-radius: 10px;
-   -ms-border-radius: 10px;
-   -o-border-radius: 10px;
+   border-radius: 15px;
+   -webkit-border-radius: 15px;
+   -moz-border-radius: 15px;
+   -ms-border-radius: 15px;
+   -o-border-radius: 15px;
 }
 
 #sign-up .container .left-content,
@@ -140,15 +140,10 @@
 }
 
 @media (min-width: 360px) and (max-width: 1027px) {
-  #sign-up {
-      margin: 0;
-  }
-
   #sign-up .container {
       display: flex;
       flex-direction: column;
       background-color: #C4C4C4;
-      margin: 0 -30%;
   }
 
   .container .left-content {
@@ -177,7 +172,7 @@
 
    .left-content .register-form form button {   
       width: 100%;
-      padding: 1em 8.6em;
+      padding: 1em 8.5em;
    }
 
    .left-content .register-form form .signup-btn {

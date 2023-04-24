@@ -1,0 +1,105 @@
+#login {
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #c4c4c4;
+}
+
+#login .container {
+   height: 100%;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.container .center-content {
+   width: 350px;
+   height: 500px;
+}
+
+.center-content .login-form {
+   padding: 4.5vh 1.9vw;
+   background-color: #fff;
+   border-radius: 15px;
+   -webkit-border-radius: 15px;
+   -moz-border-radius: 15px;
+   -ms-border-radius: 15px;
+   -o-border-radius: 15px;
+}
+
+.center-content .login-form .form-fields {
+   margin-top: 4.5vh;
+}
+
+.center-content .login-form h2 {
+   color: #03015D;
+   font-size: 24px;
+   font-weight: 700;
+   text-align: center;
+}
+
+.center-content .login-form input {
+   width: 100%;
+   margin-top: 15px;
+   padding: 1.8vh 1.5vw;
+   font-size: 15px;
+   font-weight: 400;
+   border: 1px solid #c4c4c4;
+   outline: none;
+   border-radius: 7px;
+   -webkit-border-radius: 7px;
+   -moz-border-radius: 7px;
+   -ms-border-radius: 7px;
+   -o-border-radius: 7px;
+}
+
+.center-content .login-form .form-btn {
+   position: relative;
+   bottom: 20%;
+   margin-top: 5.1rem;
+}
+
+.center-content .login-form button {
+   padding: 1.8vh 15px;
+   width: 100%;
+   font-size: 15px;
+   font-weight: 500;
+   background:  #03015D;
+   color: #fff;
+   border: 1px solid #C4C4C4;
+   border-radius: 7px;
+   outline: none;
+   cursor: pointer;
+   -webkit-border-radius: 7px;
+   -moz-border-radius: 7px;
+   -ms-border-radius: 7px;
+   -o-border-radius: 7px;
+}
+
+
+@media (min-width: 360px) and (max-width: 1027px) {
+   .container .center-content {
+      width: 330px;
+      height: 480px;
+   }
+   
+  .center-content .login-form {
+      padding: 4.5vh 3.5vw;
+   }
+
+   .center-content .login-form h2 {
+      font-size: 1.4rem;
+      text-align: center;
+   }
+
+   .center-content .login-form input {
+      padding: 0.9rem 1.2rem;
+   }
+
+   .center-content .login-form .form-btn {
+      top: 40%;
+   }
+}

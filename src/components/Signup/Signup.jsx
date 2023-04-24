@@ -3,19 +3,12 @@ import React, { useRef } from "react";
 import "./Signup.css";
 
 function Signup() {
-	// TODO:
-	// 1. Make a variable for each input field
-	// 2. Then assign a reference to a dom element
 	const nameFieldRef = useRef();
 	const usernameFieldRef = useRef();
 	const emailFieldRef = useRef();
 	const passwordFieldRef = useRef();
 	const confirmPasswordRef = useRef();
 
-	// TODO:
-	// 1. Add a function that handes register form
-	// 2. Make sure the form does not re-render
-	// 3  Print the value of form fields in browser
 	function handleRegisterForm(e) {
 		e.preventDefault();
 
@@ -39,16 +32,9 @@ function Signup() {
 			<div className="container">
 				<div className="left-content">
 					<div className="register-form">
-						{/* TODO: Using react browser events
-						 *
-						 * 1. Pass the event that send submit a form
-						 * 2. Pass the handler function as a reference */}
 						<form onSubmit={handleRegisterForm}>
 							<h2>Register an account</h2>
 							<div className="form-fields">
-								{/* TODO:
-								 *
-								 * Pass the reference values to each input field */}
 								<input type="text" placeholder="Name" ref={nameFieldRef} />
 								<input
 									type="text"
