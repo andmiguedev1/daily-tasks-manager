@@ -6,9 +6,6 @@ import Login from "./components/Login/Login";
 function App() {
 	return (
 		<div className="App">
-			{/* TODO:
-			 * Using react-router-dom v5 documentation,
-			 * Set the routes for the register and login page */}
 			<Router>
 				<Switch>
 					<Route exact path="/register" component={Signup} />

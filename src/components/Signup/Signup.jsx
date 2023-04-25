@@ -75,8 +75,6 @@ function Signup() {
 							Organize your daily activities by adding, changing, and removing your
 							daily tasks, and kep important tasks on the top.
 						</p>
-						{/* TODO:
-						 * Use link component to redirect to login page */}
 						<p class="redirect">
 							Already have an account ?<Link to="/login">Sign in</Link>
 						</p>
