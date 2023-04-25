@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { Link } from "react-router-dom";
 
 import "./Signup.css";
 
@@ -74,7 +75,11 @@ function Signup() {
 							Organize your daily activities by adding, changing, and removing your
 							daily tasks, and kep important tasks on the top.
 						</p>
-						<p class="redirect">Already have an account ?</p>
+						{/* TODO:
+						 * Use link component to redirect to login page */}
+						<p class="redirect">
+							Already have an account ?<Link to="/login">Sign in</Link>
+						</p>
 					</div>
 				</div>
 			</div>

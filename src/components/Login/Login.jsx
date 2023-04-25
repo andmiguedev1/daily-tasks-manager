@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./Login.css";
 
@@ -17,6 +18,11 @@ function Login() {
 							<div className="form-btn">
 								<button type="submit">Log In</button>
 							</div>
+							{/* TODO
+							 * Add a paragraph tag with a link to register page */}
+							<p class="redirect">
+								Don't have an account? <Link to="/register">Sign up</Link>
+							</p>
 						</form>
 					</div>
 				</div>

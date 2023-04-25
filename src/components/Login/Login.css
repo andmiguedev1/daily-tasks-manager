@@ -79,6 +79,20 @@
    -o-border-radius: 7px;
 }
 
+.center-content .login-form .redirect {
+   position: relative;
+   left: 25%;
+   width: 100%;
+   margin-top: 5.5vh;
+   color: #03015D;
+   font-size: 14px;
+}
+
+.center-content .login-form .redirect a {
+   margin-left: 0.4vw;
+   text-decoration: none;
+}
+
 
 @media (min-width: 360px) and (max-width: 1027px) {
    .container .center-content {
