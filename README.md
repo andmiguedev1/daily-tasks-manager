@@ -18,8 +18,10 @@ $ npm install && npm start
 In order to store your tasks in **firestore database**, you need to add a valid <em>Firebase configuration</em>
 
 ```bash
- # Create a directory called "private" and a file called firebaseConfig.js
- $ mkdir private && touch firebaseConfig.js
+ # Add a folder called "private" inside src directory 
+ $ cd src && mkdir private
+ # Add a file called firebaseConfig.js
+ $ touch firebaseConfig.js
 ```
 
 1. Visit [firebase console](https://console.firebase.google.com/) website, and select your <u>your firebase project</u>.
@@ -27,7 +29,9 @@ In order to store your tasks in **firestore database**, you need to add a valid 
 2. Then, click on <strong>Project Settings</strong>, and under <em>General</em> tab, copy and paste your configuration
 
 ```javascript
-const firebaseConfig = {
+import firebase from "firebase";
+
+const webApp = firebase.initializeApp({
    apiKey: YOUR_FIREBASE_API_KEY,
    authDomain: YOUR_FIREBASE_DOMAIN_KEY,
    projectId: YOUR_PROJECT_ID,
@@ -35,5 +39,7 @@ const firebaseConfig = {
    messagingSenderId: YOUR_MESSAGING_SENDER_ID,
    appId: YOUR_APP_ID,
    measurementID: YOUR_MEASUREMENT_ID
-}
+})
+
+export default webApp;
 ```
