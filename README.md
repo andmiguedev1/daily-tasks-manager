@@ -29,9 +29,10 @@ In order to store your tasks in **firestore database**, you need to add a valid 
 2. Then, click on <strong>Project Settings</strong>, and under <em>General</em> tab, copy and paste your configuration
 
 ```javascript
-import firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/auth";
 
-const webApp = firebase.initializeApp({
+const firebaseConfig = {
    apiKey: YOUR_FIREBASE_API_KEY,
    authDomain: YOUR_FIREBASE_DOMAIN_KEY,
    projectId: YOUR_PROJECT_ID,
@@ -39,7 +40,11 @@ const webApp = firebase.initializeApp({
    messagingSenderId: YOUR_MESSAGING_SENDER_ID,
    appId: YOUR_APP_ID,
    measurementID: YOUR_MEASUREMENT_ID
-})
+}
 
-export default webApp;
+const app = firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+
+export { auth };
+export default app;
 ```

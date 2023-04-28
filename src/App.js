@@ -1,22 +1,23 @@
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Signup from "./components/Signup/Signup";
 import Login from "./components/Login/Login";
-import UserProvider from "./state/context/userContext";
+import { AuthProvider } from "./state/context/authContext";
 
-function App() {
+const App = () => {
 	return (
-		<div className="App">
-			<UserProvider>
-				<Router>
+		<>
+			<Router>
+				<AuthProvider>
 					<Switch>
-						<Route exact path="/register" component={Signup} />
-						<Route exact path="/login" component={Login} />
+						<Route path="/register" component={Signup} />
+						<Route path="/login" component={Login} />
 					</Switch>
-				</Router>
-			</UserProvider>
-		</div>
+				</AuthProvider>
+			</Router>
+		</>
 	);
-}
+};
 
 export default App;
