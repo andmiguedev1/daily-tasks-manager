@@ -85,6 +85,13 @@
   cursor: pointer;
 }
 
+.left-content .register-form form button:disabled {
+   background-color: rgba(3, 1, 93, 0.34);
+   border: none;
+}
+
+
+
 .left-content .register-form .signup-btn {
   position: absolute;
   bottom: 5vh;

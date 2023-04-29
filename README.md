@@ -48,3 +48,7 @@ const auth = firebase.auth();
 export { auth };
 export default app;
 ```
+
+## 🔓 Authentication
+
+To allow user authentication using <em>Email and password</em>, make sure to <u>enable</u> the status, under <strong>Sign-in Provider</strong>
