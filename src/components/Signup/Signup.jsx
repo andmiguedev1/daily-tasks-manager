@@ -21,7 +21,7 @@ function Signup() {
 		e.preventDefault();
 
 		if (passwordFieldRef.current.value !== confirmPasswordRef.current.value) {
-			return setErrorMessage("Your Password does not match Confirm Password");
+			return setErrorMessage("Your Password field does not match confirmation field");
 		}
 		try {
 			setLoadingStatus(true);
@@ -42,9 +42,7 @@ function Signup() {
 			navigate.push("/login");
 			return signupUser;
 		} catch (error) {
-			setErrorMessage(
-				"Failed to create a new account. Make sure your password is valid!"
-			);
+			setErrorMessage("Failed to create a new account. Try again!");
 		}
 		setLoadingStatus(false);
 	}
@@ -57,6 +55,7 @@ function Signup() {
 						<form onSubmit={sendRegisterForm}>
 							<h2>Register an account</h2>
 							<div className="form-fields">
+								{errorMessage && <p className="display-error">{errorMessage}</p>}
 								<input type="text" placeholder="Name" ref={nameFieldRef} />
 								<input
 									type="text"

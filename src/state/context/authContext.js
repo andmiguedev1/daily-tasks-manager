@@ -12,26 +12,11 @@ export function AuthProvider({ children }) {
 	const [loadingState, setLoadingState] = useState(true);
 
 	async function register(userEmail, userPassword) {
-		try {
-			if (userEmail && userPassword) {
-				await auth.createUserWithEmailAndPassword(userEmail, userPassword);
-			}
-		} catch (error) {
-			console.log(
-				"Sorry! We were unable to sign you in. Check error message:",
-				error.message
-			);
-		}
+		return await auth.createUserWithEmailAndPassword(userEmail, userPassword);
 	}
 
 	async function login(userEmail, userPassword) {
-		try {
-			if (userEmail && userPassword) {
-				await auth.signInWithEmailAndPassword(userEmail, userPassword);
-			}
-		} catch (error) {
-			console.log("Your credentials do not match our records. Try again!");
-		}
+		return await auth.signInWithEmailAndPassword(userEmail, userPassword);
 	}
 
 	const authInfo = {
