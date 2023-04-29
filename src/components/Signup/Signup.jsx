@@ -5,17 +5,10 @@ import { useFirebaseAuth } from "../../state/context/authContext";
 import "./Signup.css";
 
 function Signup() {
-	// TODO: Add a temporary variable for holding
-	// the error state, and loading status
 	const [loadingStatus, setLoadingStatus] = useState(false);
 	const [errorMessage, setErrorMessage] = useState("");
 
-	// TODO: Extract the register function from
-	// firebase authentication context
 	const { register } = useFirebaseAuth();
-
-	// TODO: Make an instance of useHistory hook,
-	// so that you can navigate to other pages
 	const navigate = useHistory();
 
 	const nameFieldRef = useRef();
@@ -27,19 +20,12 @@ function Signup() {
 	async function sendRegisterForm(e) {
 		e.preventDefault();
 
-		// TODO: Add a statement that validates if
-		// the password enter by the online user does
-		// not match the password confirmation field
 		if (passwordFieldRef.current.value !== confirmPasswordRef.current.value) {
 			return setErrorMessage("Your Password does not match Confirm Password");
 		}
 		try {
-			// TODO: Add the following instructions
-			//
-			// 1. Switch the value of loading status
 			setLoadingStatus(true);
-			// 2. Call the register function from the authContext file
-			// and pass the email and password form field values
+
 			const signupUser = await register(
 				emailFieldRef.current.value,
 				passwordFieldRef.current.value
@@ -53,15 +39,13 @@ function Signup() {
 				username: username,
 			});
 
-			// 3. Redirect online user to Login page
 			navigate.push("/login");
 			return signupUser;
 		} catch (error) {
-			// TODO: Write an error message
-			setErrorMessage("Something went wrong! Failed to create an account");
+			setErrorMessage(
+				"Failed to create a new account. Make sure your password is valid!"
+			);
 		}
-
-		// TODO: Set loading status to false, once registration is finished
 		setLoadingStatus(false);
 	}
 
@@ -100,8 +84,6 @@ function Signup() {
 								/>
 							</div>
 							<div className="signup-btn">
-								{/* TODO: Add disabled attribute, so that the button is
-								 * enabled only after all the fields have been filled */}
 								<button disabled={loadingStatus} type="submit">
 									Sign Up
 								</button>

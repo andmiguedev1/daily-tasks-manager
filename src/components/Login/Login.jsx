@@ -1,17 +1,44 @@
-import React, { useRef } from "react";
-import { Link } from "react-router-dom";
+import React, { useRef, useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 
 import "./Login.css";
+import { useFirebaseAuth } from "../../state/context/authContext";
 
 function Login() {
-	const usernameFieldRef = useRef();
+	const [loadingStatus, setLoadingStatus] = useState(false);
+	const [errorMessage, setErrorMessage] = useState("");
+
+	// TODO: Destructure the login function
+	// from firebase authentication context
+	const { login } = useFirebaseAuth();
+
+	const navigate = useHistory();
+
+	// TODO: Rename the username field
+	// to emailFieldRef variable
+	const emailFieldRef = useRef();
 	const passwordFieldRef = useRef();
 
-	function handleLoginForm(e) {
+	async function sendLoginForm(e) {
 		e.preventDefault();
 
-		const username = usernameFieldRef.current.value;
-		console.log({ username: username });
+		// TODO: Using a try catch block,
+		// add the following statements:
+		//
+		// 1. Set loading status to true
+		try {
+			setLoadingStatus(true);
+			// 2. Import the login function, and pass
+			// the user login credentials
+			await login(emailFieldRef.current.value, passwordFieldRef.current.value);
+
+			// 3. Navigate to the home page
+			navigate.push("/");
+		} catch (error) {
+			// 4. Print an error message to user
+			setErrorMessage("Unable to sign you in. Check your credentials and try again!");
+		}
+		setLoadingStatus(false);
 	}
 
 	return (
@@ -19,24 +46,26 @@ function Login() {
 			<div className="container">
 				<div className="center-content">
 					<div className="login-form">
-						<form onSubmit={handleLoginForm}>
+						<form onSubmit={sendLoginForm}>
 							<h2>Daily Tasks App</h2>
 							<div className="form-fields">
 								<input
-									type="text"
+									type="email"
 									placeholder="Email or Username"
+									ref={emailFieldRef}
 									required
-									ref={usernameFieldRef}
 								/>
 								<input
 									type="password"
 									placeholder="Password"
-									required
 									ref={passwordFieldRef}
+									required
 								/>
 							</div>
 							<div className="form-btn">
-								<button type="submit">Log In</button>
+								<button disabled={loadingStatus} type="submit">
+									Log In
+								</button>
 							</div>
 							<p class="redirect">
 								Don't have an account? <Link to="/register">Sign up</Link>
