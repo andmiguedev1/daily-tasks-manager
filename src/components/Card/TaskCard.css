@@ -1,0 +1,100 @@
+.task-card {
+   position: relative;
+   background-color: white;
+   box-shadow: 0px 2px 4px 1px #dadada;
+   border-radius: 15px;
+   transition: 0.5s ease-in;
+}
+
+.card-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   height: 100%;
+   padding: 20px;
+}
+
+.task-card .task-details {
+   margin-top: 25px;
+}
+
+.task-card .task-details i {
+   cursor: pointer;
+}
+
+.task-details .task-title {
+   width: 80%;
+   overflow: hidden;
+}
+
+.task-details .task-title h2 {
+   color: #535353;
+   font-size: 22px;
+   font-weight: 800;
+}
+
+.task-details .remove-task {
+   position: absolute;
+   top: 28%;
+   left: 85%;
+}
+
+.task-details .task-content {
+   width: 95%;
+   max-height: 85px;
+   margin-top: 15px;
+   overflow: hidden;
+}
+
+.task-details .task-content p {
+   color: #4e4d4d;
+   font-size: 13px;
+   font-weight: 300;
+}
+
+.task-content::-webkit-scrollbar {
+  width: 7px;
+}
+.task-content::-webkit-scrollbar-track {
+  background: #F4F3F3; 
+  border-radius:15px;
+}
+.task-content::-webkit-scrollbar-thumb {
+  background: #C4C4C4; 
+  border-radius:15px;
+}
+
+.task-content.scroll {
+   overflow-y: scroll;
+}
+
+.task-info .task-date {
+   display: flex;
+   position: relative;
+   top: -3px;
+   left: 5px;
+}
+
+.task-info .task-date h4 {
+   padding-left: 6px;
+   color: #4a4a4a;
+   font-size: 14px;
+   font-weight: 500;
+   letter-spacing: 0px;
+}
+
+.task-info .task-important {
+   position: absolute;
+   top: 78%;
+   left: 78%;
+}
+
+.task-info .task-finished {
+   position: absolute;
+   top: 78%;
+   left: 85%;
+   width: 15px;
+   height: 18px;
+   border: 2px solid #c4c4c4;
+   border-radius: 0px 0px 50px 50px;
+} 

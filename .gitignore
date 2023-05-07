@@ -25,3 +25,6 @@ yarn-error.log*
 # ignore files and folder
 /backup
 /src/private
+
+# temporary
+/src/pages
